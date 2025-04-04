@@ -1,0 +1,183 @@
+> <htmllang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Adventure - Paquetes Turísticos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+    .paquete {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2e8b57;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .precio, .promociones, .condiciones {
+      margin-top: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2e8b57;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Green Adventure</h1>
+  <p>Explora Tarija con nuestros paquetes turísticos únicos</p>
+</header>
+
+<div class="container">
+
+  <!-- Paquete 1 -->
+  <div class="paquete">
+    <h2>Ruta del Peregrino</h2>
+    <p>Explora Lazareto y comunidades cercanas en un viaje lleno de historia, espiritualidad y naturaleza.</p>
+    
+    <h3>Lugares a visitar:</h3>
+    <ul>
+      <li>Capilla de Lazareto</li>
+      <li>Ruinas del leprosario</li>
+      <li>Aguas milagrosas</li>
+      <li>Comunidad de San Andrés</li>
+      <li>San Pedro de Sola y Pozas Verdes</li>
+    </ul>
+
+    <h3>Actividades:</h3>
+    <ul>
+      <li>Paseos a pie por senderos naturales</li>
+      <li>Degustación de almuerzo típico</li>
+      <li>Merienda tradicional</li>
+      <li>Relatos históricos y culturales</li>
+    </ul>
+
+    <h3>Servicios incluidos:</h3>
+    <ul>
+      <li>Transporte privado</li>
+      <li>Guía turístico</li>
+      <li>Almuerzo típico</li>
+      <li>Entradas a sitios turísticos</li>
+      <li>Seguro de viaje</li>
+      <li>Botella de agua y snack</li>
+    </ul>
+
+    <div class="precio">
+      <strong>Precio:</strong> Bs 250 por persona<br>
+      <em>Descuento: 5% para grupos de más de 5 personas</em>
+    </div>
+
+    <div class="promociones">
+      <h4>Promociones:</h4>
+      <ul>
+        <li><strong>Promoción de cumpleaños:</strong> El cumpleañero viaja gratis con un grupo de 5 personas</li>
+        <li><strong>Tour Fotográfico:</strong> Bs 350 incluye sesión profesional y álbum digital</li>
+        <li><strong>Tour de sostenibilidad:</strong> Bs 320 incluye participación en proyectos locales</li>
+        <li><strong>Descuento por reserva anticipada:</strong> 5% por reservar con 30 días de anticipación</li>
+        <li><strong>Tour exclusivo para clientes fieles</strong></li>
+      </ul>
+    </div>
+
+    <div class="condiciones">
+      <h4>Condiciones de reserva y cancelación:</h4>
+      <ul>
+        <li>Pago inicial del 30% para reservar</li>
+        <li>Pago final 10 días antes del tour</li>
+        <li>Cancelación antes de 30 días: 50% devolución</li>
+        <li>Cancelación 16-30 días: 25% devolución</li>
+        <li>Cancelación menos de 15 días: sin devolución</li>
+        <li>Cancelación por parte de la agencia: 100% devolución</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Paquete 2 -->
+  <div class="paquete">
+    <h2>Una Aventura en Tajzara</h2>
+    <p>Explora el impresionante desierto de Tajzara en una experiencia de 3 días y 2 noches llena de naturaleza, cultura y aventura.</p>
+    
+    <h3>Lugares a visitar:</h3>
+    <ul>
+      <li>Laguna de Pujzara</li>
+      <li>Montaña El Morao</li>
+      <li>Comunidad local</li>
+    </ul>
+
+    <h3>Actividades:</h3>
+    <ul>
+      <li>Escalada con vistas panorámicas</li>
+      <li>Almuerzo regional en restaurante local</li>
+      <li>Interacción cultural con comunidades</li>
+      <li>Observación del cielo estrellado</li>
+    </ul>
+
+    <h3>Servicios incluidos:</h3>
+    <ul>
+      <li>Transporte privado</li>
+      <li>Guía local</li>
+      <li>Desayuno, almuerzo, cena</li>
+      <li>Snacks y agua</li>
+      <li>Asistencia permanente</li>
+    </ul>
+
+    <div class="precio">
+      <strong>Precio:</strong> Bs 1200 por persona<br>
+      <em>Precio grupal (4 o más): Bs 1100 por persona</em>
+    </div>
+
+    <div class="promociones">
+      <h4>Promociones y Descuentos:</h4>
+      <ul>
+        <li>10% de descuento para los primeros 2 clientes</li>
+        <li>15% para grupos de 4 o más</li>
+        <li>10% para estudiantes con carné vigente</li>
+        <li>5% por pago anticipado (30 días)</li>
+        <li>3% por reserva online</li>
+        <li>10% para clientes recurrentes (últimos 12 meses)</li>
+      </ul>
+    </div>
+
+    <div class="condiciones">
+      <h4>Condiciones:</h4>
+      <ul>
+        <li>Reserva confirmada con el 50% del pago</li>
+        <li>Saldo cancelado 15 días antes del viaje</li>
+        <li>Descuentos no acumulables</li>
+        <li>No incluye gastos personales ni servicios fuera del itinerario</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  &copy; 2025 Green Adventure | Todos los derechos reservados
+</footer>
+
+</body>
+</html>
