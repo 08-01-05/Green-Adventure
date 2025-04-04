@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paquetes Turísticos - Ruta del Peregrino y Aventura en Tajzara</title>
+  <style>
+    :root {
+      --primary-color: #2d7d5a;
+      --secondary-color: #4a9d7c;
+      --accent-color: #f5a623;
+      --light-gray: #f8f8f8;
+      --medium-gray: #e0e0e0;
+      --dark-gray: #333333;
+      --white: #ffffff;
+    }
+    
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: var(--dark-gray);
+      background-color: var(--light-gray);
+    }
+    
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 2rem 0;
+      text-align: center;
+      transition: all 0.5s ease;
+    }
+    
+    header:hover {
+      background-color: #25684a;
+    }
+    
+    h1 {
+      margin: 0;
+      font-weight: 300;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      transition: transform 0.3s ease;
+    }
+    
+    h1:hover {
+      transform: scale(1.02);
+    }
+    
+    nav {
+      background-color: var(--secondary-color);
+      text-align: center;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    nav.scrolled {
+      background-color: rgba(74, 157, 124, 0.95);
+      padding: 0.8rem 0;
+    }
+    
+    nav a {
+      color: var(--white);
+      margin: 0 1.5rem;
+      text-decoration: none;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    
+    nav a:hover {
+      color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+      opacity: 1;
+    }
+    
+    section {
+      padding: 2.5rem;
+      background: var(--white);
+      margin: 2rem auto;
+      max-width: 1000px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: all 0.4s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    h2 {
+      color: var(--primary-color);
+      font-weight: 400;
+      margin-top: 0;
+      font-size: 1.8rem;
+      border-bottom: 1px solid var(--medium-gray);
+      padding-bottom: 0.8rem;
+      transition: all 0.3s ease;
+    }
+    
+    h2:hover {
+      letter-spacing: 0.5px;
+      color: #1f5a40;
+    }
+    
+    h3 {
+      color: var(--secondary-color);
+      font-weight: 400;
+      margin-top: 1.8rem;
+      transition: all 0.3s ease;
+    }
+    
+    h3:hover {
+      transform: translateX(5px);
+    }
+    
+    h4 {
+      color: var(--dark-gray);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    h4:hover {
+      color: var(--primary-color);
+    }
+    
+    p {
+      color: var(--dark-gray);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    p:hover {
+      color: #444;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    li {
+      padding: 0.3rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+      transition: all 0.3s ease;
+    }
+    
+    li:hover {
+      transform: translateX(5px);
+    }
+    
+    li::before {
+      content: '•';
+      color: var(--accent-color);
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+    
+    li:hover::before {
+      transform: scale(1.3);
+    }
+    
+    .precio, .promocion, .condiciones {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background-color: var(--light-gray);
+      border-radius: 6px;
+      transition: all 0.4s ease;
+    }
+    
+    .precio:hover, .promocion:hover, .condiciones:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .promocion p {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .promocion p:hover {
+      background-color: rgba(245, 166, 35, 0.1);
+      border-radius: 4px;
+      padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+    }
+    
+    .promocion p::before {
+      content: '→';
+      color: var(--accent-color);
+      position: absolute;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .promocion p:hover::before {
+      transform: rotate(90deg);
+      left: 5px;
+    }
+    
+    footer {
+      text-align: center;
+      background: var(--primary-color);
+      color: var(--white);
+      padding: 1.5rem;
+      margin-top: 3rem;
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      transition: all 0.5s ease;
+    }
+    
+    footer:hover {
+      background-color: #1f5a40;
+      letter-spacing: 1px;
+    }
+    
+    .imagen-destino {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      filter: brightness(0.95);
+    }
+    
+    .imagen-destino:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      filter: brightness(1);
+    }
+    
+    strong {
+      font-weight: 500;
+      color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+    
+    strong:hover {
+      color: var(--accent-color);
+    }
+    
+    @media (max-width: 768px) {
+      section {
+        padding: 1.5rem;
+        margin: 1.5rem;
+      }
+      
+      nav a {
+        margin: 0 0.8rem;
+        font-size: 0.9rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .imagen-destino {
+        height: 250px;
+      }
+    }
+
+    /* Animación de carga para las secciones */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Descubre Nuestros Paquetes Turísticos</h1>
+  </header>
+  
+  <nav id="mainNav">
+    <a href="#peregrino">Ruta del Peregrino</a>
+    <a href="#tajzara">Aventura en Tajzara</a>
+  </nav>
+
+  <section id="peregrino">
+    <h2>Ruta del Peregrino</h2>
+    <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Camino de peregrinación" class="imagen-destino">
+
+    <p>Partimos desde el hotel hacia la comunidad de Lazareto donde visitamos la capilla y exploramos la historia local. Caminamos hacia las ruinas del leprosario, disfrutamos de una merienda y aprendemos sobre su pasado. Luego, ascendemos hacia las aguas milagrosas y escuchamos sobre sus propiedades curativas. Seguimos a la comunidad de San Andrés para un almuerzo típico y visitamos las pozas verdes en San Pedro de Sola antes de regresar al hotel.</p>
+
+    <h3>Servicios Incluidos</h3>
+    <ul>
+      <li>Transporte privado desde el hotel</li>
+      <li>Guía turístico local</li>
+      <li>Almuerzo típico</li>
+      <li>Entradas a sitios turísticos</li>
+      <li>Seguro de viaje</li>
+      <li>Botella de agua y snack</li>
+    </ul>
+
+    <div class="promocion">
+      <h3>Promociones Especiales</h3>
+      <p><strong>Promoción de cumpleaños:</strong> Bs 250 por persona (cumpleañero gratis en grupo de 5). Incluye pastel y regalo local.</p>
+      <p><strong>Tour Fotográfico:</strong> Bs 350. Incluye álbum digital.</p>
+      <p><strong>Tour de sostenibilidad:</strong> Bs 320. Participación en proyectos locales.</p>
+      <p><strong>Descuento por reserva anticipada:</strong> 5% pagando con más de 30 días de anticipación.</p>
+      <p><strong>Tour exclusivo:</strong> Para clientes que hayan reservado 3 tours o más.</p>
+    </div>
+
+    <div class="precio">
+      <h4>Precio</h4>
+      <p>Bs 250 por persona. 5% de descuento para grupos mayores a 5 personas.</p>
+    </div>
+
+    <div class="condiciones">
+      <h4>Condiciones de Reserva y Cancelación</h4>
+      <ul>
+        <li>Pago inicial del 30%</li>
+        <li>Pago final 10 días antes del tour</li>
+        <li>Cancelación antes de 30 días: 50% devolución del pago inicial</li>
+        <li>Entre 16 y 30 días: 25% devolución</li>
+        <li>Menos de 15 días: sin devolución</li>
+        <li>Cancelación por la agencia: devolución total</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="tajzara">
+    <h2>Una Aventura en Tajzara</h2>
+    <img src="https://images.unsplash.com/photo-1468413253725-0d5181091126?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Paisaje desértico de Tajzara" class="imagen-destino">
+
+    <p>Explora el desierto de Tajzara durante 3 días y 2 noches. Visita la laguna de Pujzara, sube la montaña El Morao y conoce comunidades locales. Disfruta de comidas típicas, cultura y noches estrelladas en nuestro albergue.</p>
+
+    <h3>Servicios Incluidos</h3>
+    <ul>
+      <li>Transporte privado durante todo el viaje</li>
+      <li>Guía local durante las actividades</li>
+      <li>Desayuno, almuerzo y cena tradicional</li>
+      <li>Snacks y agua</li>
+      <li>Asistencia en primeros auxilios</li>
+    </ul>
+
+    <div class="promocion">
+      <h3>Promociones Especiales</h3>
+      <p><strong>Promoción de lanzamiento:</strong> 10% descuento para los primeros 2 clientes</p>
+      <p><strong>Grupo:</strong> 15% descuento para grupos de 4 o más</p>
+      <p><strong>Estudiante:</strong> 10% descuento con carné universitario</p>
+      <p><strong>Pago anticipado:</strong> 5% descuento si se paga con 30 días de anticipación</p>
+      <p><strong>Reserva online:</strong> 3% descuento adicional</p>
+      <p><strong>Cliente recurrente:</strong> 10% descuento si viajó en los últimos 12 meses</p>
+    </div>
+
+    <div class="precio">
+      <h4>Precio</h4>
+      <p>Bs 1200 por persona. Bs 1100 para grupos de 4 o más personas.</p>
+    </div>
+
+    <div class="condiciones">
+      <h4>Condiciones</h4>
+      <ul>
+        <li>Precios incluyen servicios del itinerario</li>
+        <li>No incluye gastos personales ni actividades extras</li>
+        <li>Promociones no acumulables</li>
+        <li>Reserva confirmada con 50% del pago</li>
+        <li>Saldo pendiente pagado 15 días antes del viaje</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Turismo Andino | Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('mainNav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    
+    const sections = document.querySelectorAll('section');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(() => {
+        document.querySelector('header').style.opacity = '1';
+      }, 100);
+    });
+  </script>
+</body>
+</html>
